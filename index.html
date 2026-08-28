@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ISAHP 2024 Research | Why are AHP results not binding for appraising real estate?</title>
+  <meta name="description" content="Presentation and academic documentation of the research presented at the International Symposium on the Analytic Hierarchy Process (ISAHP 2024) by Prof. Eng. Miguel Camacaro Pérez, M.Sc.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-dark: #070c18;
+      --bg-card: #0f172a;
+      --border-card: rgba(255, 255, 255, 0.12);
+      --royal-blue: #0070ba;
+      --accent-blue: #2563eb;
+      --accent-gold: #f59e0b;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --font-title: 'Cinzel', serif;
+      --font-reading: 'Literata', Georgia, serif;
+      --font-ui: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-ui);
+      line-height: 1.6;
+      overflow-x: hidden;
+      text-align: justify;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Header */
+    header {
+      background: rgba(7, 12, 24, 0.98);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-card);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      padding: 0.85rem 0;
+      text-align: left;
+    }
+
+    .nav-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .brand-logo-left {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .logo-container {
+      background: #ffffff;
+      padding: 6px 12px;
+      border-radius: 12px;
+      border: 2px solid var(--royal-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    }
+
+    .logo-container img {
+      height: 72px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .nav-center {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-center a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 1.05rem;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .nav-center a:hover {
+      color: #93c5fd;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: none;
+      text-align: center;
+    }
+
+    .btn-donate {
+      background: linear-gradient(135deg, #1d4ed8, #2563eb);
+      color: #ffffff;
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .btn-donate:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.05);
+      color: #fff;
+      border: 1px solid var(--border-card);
+      font-size: 0.95rem;
+      padding: 0.7rem 1.4rem;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: #60a5fa;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 5rem 0 4.5rem;
+      background: radial-gradient(circle at 50% 10%, #172554 0%, #070c18 80%);
+      border-bottom: 1px solid var(--border-card);
+      text-align: left;
+    }
+
+    .badge-editorial {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(37, 99, 235, 0.15);
+      border: 1px solid rgba(37, 99, 235, 0.4);
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #93c5fd;
+      margin-bottom: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .hero-title {
+      font-family: var(--font-title);
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      line-height: 1.3;
+      margin-bottom: 1.2rem;
+      color: #ffffff;
+    }
+
+    .hero-title span {
+      color: #60a5fa;
+    }
+
+    .hero-lead {
+      font-family: var(--font-reading);
+      font-size: 1.2rem;
+      color: #cbd5e1;
+      margin-bottom: 2rem;
+      line-height: 1.8;
+      max-width: 950px;
+      text-align: justify;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* Author Section */
+    .author-section {
+      padding: 4.5rem 0;
+      background: radial-gradient(circle at 50% 50%, #0f172a 0%, #070c18 85%);
+      border-bottom: 1px solid var(--border-card);
+      text-align: center;
+    }
+
+    .author-card-centered {
+      background: linear-gradient(145deg, #1e293b, #0f172a);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 24px;
+      padding: 3rem 2.5rem;
+      max-width: 850px;
+      margin: 0 auto;
+      text-align: center;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.85), 0 0 35px rgba(37, 99, 235, 0.2);
+    }
+
+    .author-photo-xl {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      border: 3px solid #3b82f6;
+      padding: 5px;
+      margin: 0 auto 1.5rem;
+      overflow: hidden;
+      background: #070c18;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+
+    .author-photo-xl img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+    }
+
+    .author-card-centered h3 {
+      font-family: var(--font-title);
+      font-size: 1.8rem;
+      color: #fff;
+      margin-bottom: 0.4rem;
+    }
+
+    .author-card-centered .subtitle {
+      color: #60a5fa;
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .author-quote {
+      font-family: var(--font-reading);
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+      font-style: italic;
+      text-align: justify;
+    }
+
+    .author-socials-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .social-icon-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-card);
+      padding: 0.7rem 1.4rem;
+      border-radius: 999px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+    }
+
+    .social-icon-btn:hover {
+      background: rgba(37, 99, 235, 0.2);
+      border-color: #3b82f6;
+      color: #93c5fd;
+      transform: translateY(-2px);
+    }
+
+    .social-icon-btn svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    /* ISAHP History Box */
+    .isahp-history-box {
+      background: linear-gradient(145deg, #1e293b, #0f172a);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 2.5rem;
+      margin-top: 2rem;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    }
+
+    .isahp-history-box h3 {
+      font-family: var(--font-title);
+      font-size: 1.6rem;
+      color: #93c5fd;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .isahp-history-box p {
+      font-size: 1.05rem;
+      color: #cbd5e1;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+      text-align: justify;
+    }
+
+    /* Content Sections */
+    .section-block {
+      padding: 4.5rem 0;
+      border-bottom: 1px solid var(--border-card);
+      text-align: left;
+    }
+
+    .section-head {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-head h2 {
+      font-family: var(--font-title);
+      font-size: 2.4rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-head p {
+      color: var(--text-muted);
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 1.1rem;
+    }
+
+    /* PDF Viewers */
+    .document-wrapper {
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    }
+
+    .document-wrapper h3 {
+      font-family: var(--font-title);
+      font-size: 1.5rem;
+      color: #93c5fd;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-bottom: 0.8rem;
+    }
+
+    .pdf-viewer {
+      width: 100%;
+      height: 700px;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      background-color: #e2e8f0; 
+    }
+
+    /* Multimedia Section */
+    .multimedia-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 2.5rem;
+      margin-top: 2rem;
+    }
+
+    .video-container {
+      background: var(--bg-card);
+      padding: 1.5rem;
+      border-radius: 16px;
+      border: 1px solid var(--border-card);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    }
+
+    .video-container h3 {
+      font-family: var(--font-title);
+      font-size: 1.25rem;
+      color: #fff;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .iframe-wrapper {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      height: 0;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .iframe-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    footer {
+      border-top: 1px solid var(--border-card);
+      padding: 3rem 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      background: var(--bg-dark);
+    }
+
+    @media (max-width: 950px) {
+      .nav-center { display: none; }
+      .multimedia-grid { grid-template-columns: 1fr; }
+      .pdf-viewer { height: 500px; }
+      body { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav-wrap">
+      <a href="#" class="brand-logo-left" title="Miguel Camacaro Ediciones">
+        <div class="logo-container">
+          <img src="LogoMCE_5.png" alt="Miguel Camacaro Ediciones" onerror="this.onerror=null; this.src='LogoMCE.png';">
+        </div>
+      </a>
+
+      <!-- Navigation Menu: The Author before About ISAHP -->
+      <nav class="nav-center">
+        <a href="#author">The Author</a>
+        <a href="#isahp">About ISAHP</a>
+        <a href="#documents">Academic Documentation</a>
+        <a href="#multimedia">Multimedia</a>
+        <a href="https://paypal.me/spilimcurso" target="_blank" rel="noopener noreferrer" class="btn btn-donate">☕ Contribute / Donate</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <span class="badge-editorial">ISAHP 2024 Web Conference • December 13-15, 2024</span>
+        <h1 class="hero-title">Why are AHP results not binding <span>for appraising real estate?</span>[cite: 15, 29]</h1>
+        <p class="hero-lead">
+          Formal research presented by <strong>Prof. Eng. Miguel Camacaro Pérez, M.Sc.</strong> (Appraisers Reading Club)[cite: 15] at the International Symposium on the Analytic Hierarchy Process[cite: 15]. A rigorous demonstration using the reduction to absurdity method regarding the limitations of AHP and the Valuation Ratio (RV) in real estate appraisal[cite: 15].
+        </p>
+        <div class="hero-btns">
+          <a href="#documents" class="btn btn-donate" style="font-size: 1.05rem; padding: 0.85rem 1.8rem;">Consult Academic Documents</a>
+          <a href="#multimedia" class="btn btn-outline">▶ Watch Multimedia Presentation</a>
+          <a href="#author" class="btn btn-outline">Meet the Author</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Author Section (Placed before About ISAHP) -->
+    <section class="author-section" id="author">
+      <div class="container">
+        <div class="author-card-centered">
+          <div class="author-photo-xl">
+            <img src="Foto.png" alt="Prof. Eng. Miguel Camacaro Pérez, M.Sc." onerror="this.onerror=null; this.src='Foto_2.png';">
+          </div>
+          <h3>Prof. Eng. Miguel Camacaro Pérez, M.Sc.</h3>
+          <div class="subtitle">Civil Engineer - Appraiser • Specialist in Legal Engineering & Asset Valuation</div>
+          <p class="author-quote">
+            «Professor Miguel Camacaro Pérez is passionate about Valuation Science, Data Science, and Generative Artificial Intelligence, committed to boosting the professional growth of appraisers through the integration of the latest tools and technologies into their workflow».
+          </p>
+          
+          <div class="author-socials-icons">
+            <!-- Academic Contact Button -->
+            <a href="mailto:cursoediciones@gmail.com" class="social-icon-btn" title="Send email to cursoediciones@gmail.com">
+              <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-8V6l8 5 8-8v2z"/></svg>
+              Academic Contact (cursoediciones@gmail.com)
+            </a>
+            <!-- LinkedIn Button -->
+            <a href="https://linkedin.com/in/miguel-alberto-camacaro-pérez-4634b2118" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="LinkedIn Profile">
+              <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+              LinkedIn
+            </a>
+            <!-- Mundo Valor YouTube Channel -->
+            <a href="https://www.youtube.com/@MundoValor" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="Mundo Valor YouTube Channel">
+              <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              Mundo Valor on YouTube
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About ISAHP Section (Placed after the author section) -->
+    <section class="section-block" id="isahp">
+      <div class="container">
+        <div class="section-head">
+          <h2>International Symposium on the Analytic Hierarchy Process</h2>
+          <p>The premier global academic forum for multi-criteria decision analysis[cite: 30].</p>
+        </div>
+
+        <div class="isahp-history-box">
+          <h3>🏛️ About ISAHP & Its Significance</h3>
+          <p>
+            The <strong>International Symposium on the Analytic Hierarchy Process (ISAHP)</strong> for Decision Making brings together researchers, academics, students, and other users of AHP/ANP from around the globe to share their advanced research, experiences, and breakthroughs in decision-making methodologies[cite: 30].
+          </p>
+          <p>
+            ISAHP is a biennial conference dedicated entirely to multi-criteria decision analysis, placing a particular focus on the Analytic Hierarchy Process (AHP) and its powerful extension, the Analytic Network Process (ANP)—both originally developed by Thomas L. Saaty—as well as their combinations and comparisons with other quantitative methods[cite: 30]. Presenting a paper at ISAHP represents a major milestone in validating mathematical and decision-analytic models against rigorous international peer review.
+          </p>
+          <div style="text-align: right; margin-top: 1rem;">
+            <a href="https://www.isahp.org/" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="font-size: 0.85rem; padding: 0.5rem 1rem;">Visit Official ISAHP Website (isahp.org) ➔</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Document Viewers Section -->
+    <section class="section-block" id="documents">
+      <div class="container">
+        <div class="section-head">
+          <h2>Official Academic Documentation</h2>
+          <p>Comprehensive consultation of documents submitted and approved for ISAHP 2024[cite: 24].</p>
+        </div>
+
+        <!-- 1. Abstract -->
+        <div class="document-wrapper">
+          <h3>1. Official Abstract</h3>
+          <iframe class="pdf-viewer" src="1.%20Abstract_2.pdf#toolbar=0&navpanes=0" title="Abstract ISAHP 2024" oncontextmenu="return false;"></iframe>
+        </div>
+
+        <!-- 2. Paper Acceptance Notice -->
+        <div class="document-wrapper">
+          <h3>2. Official Paper Acceptance Notice (ISAHP 2024)[cite: 24]</h3>
+          <iframe class="pdf-viewer" src="2.%20Aprobaci%C3%B3n%20del%20trabajo_2.pdf#toolbar=0&navpanes=0" title="Paper Acceptance Notice" oncontextmenu="return false;"></iframe>
+        </div>
+
+        <!-- 3. Longer Paper -->
+        <div class="document-wrapper">
+          <h3>3. Complete Research Paper (Longer Version)</h3>
+          <iframe class="pdf-viewer" src="3.Paper%20Longer.pdf#toolbar=0&navpanes=0" title="Complete Research Paper" oncontextmenu="return false;"></iframe>
+        </div>
+
+        <!-- 3.2 Short Paper Alternative -->
+        <div class="document-wrapper">
+          <h3>3.2 Research Paper (Short Version)</h3>
+          <iframe class="pdf-viewer" src="3.Papers%20Short.pdf#toolbar=0&navpanes=0" title="Short Research Paper" oncontextmenu="return false;"></iframe>
+        </div>
+
+        <!-- 4. PowerPoint Presentation -->
+        <div class="document-wrapper">
+          <h3>4. Conference Presentation Slides (PowerPoint)</h3>
+          <iframe class="pdf-viewer" src="4.%20Presentaci%C3%B3nPPT_2.pdf#toolbar=0&navpanes=0" title="PowerPoint Presentation" oncontextmenu="return false;"></iframe>
+        </div>
+
+        <!-- 5. Proposal Arbitration -->
+        <div class="document-wrapper">
+          <h3>5. International Arbitration Proposal</h3>
+          <iframe class="pdf-viewer" src="5.%20Propuesta%20arbitraje_2.pdf#toolbar=0&navpanes=0" title="Proposal Arbitration" oncontextmenu="return false;"></iframe>
+        </div>
+
+        <!-- 6. Certificate of Participation -->
+        <div class="document-wrapper">
+          <h3>6. Certificate of Participation (ISAHP 2024)[cite: 29]</h3>
+          <iframe class="pdf-viewer" src="6.%20Certificado_2.pdf#toolbar=0&navpanes=0" title="Certificate of Participation" oncontextmenu="return false;"></iframe>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Multimedia Section -->
+    <section class="section-block" id="multimedia" style="background: #040811;">
+      <div class="container">
+        <div class="section-head">
+          <h2>Multimedia Resources</h2>
+          <p>Audiovisual recording of the official symposium presentation and methodological discussion.</p>
+        </div>
+        
+        <div class="multimedia-grid">
+          
+          <!-- Video 1 -->
+          <div class="video-container">
+            <h3>Official Video Presentation</h3>
+            <div class="iframe-wrapper">
+              <iframe src="https://www.youtube.com/embed/f4NYVoqwvuM" title="Official Presentation" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <!-- Video 2 -->
+          <div class="video-container">
+            <h3>Methodological Discussion & Walkthrough</h3>
+            <div class="iframe-wrapper">
+              <iframe src="https://www.youtube.com/embed/ncEZc78e4fY" title="Methodological Discussion" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p><strong>Miguel Camacaro Ediciones</strong> — © 2024 - 2026. All rights reserved.</p>
+      <p style="margin-top:0.4rem; opacity:0.7;">Research presented at the International Symposium on the Analytic Hierarchy Process (ISAHP 2024 Web Conference).</p>
+    </div>
+  </footer>
+
+</body>
+</html>
