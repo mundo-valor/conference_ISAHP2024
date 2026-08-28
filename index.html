@@ -389,9 +389,9 @@
     /* Multimedia Section */
     .multimedia-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-      gap: 2.5rem;
-      margin-top: 2rem;
+      grid-template-columns: 1fr;
+      max-width: 800px;
+      margin: 2rem auto 0;
     }
 
     .video-container {
@@ -439,7 +439,6 @@
 
     @media (max-width: 950px) {
       .nav-center { display: none; }
-      .multimedia-grid { grid-template-columns: 1fr; }
       .pdf-viewer { height: 500px; }
       body { text-align: left; }
     }
@@ -541,7 +540,7 @@
       </div>
     </section>
 
-    <!-- Document Viewers Section (Files mapped cleanly without spaces in filenames) -->
+    <!-- Document Viewers Section (Exact filenames matching GitHub repository) -->
     <section class="section-block" id="documents">
       <div class="container">
         <div class="section-head">
@@ -552,83 +551,62 @@
         <!-- 1. Abstract -->
         <div class="document-wrapper">
           <h3>1. Official Abstract</h3>
-          <iframe class="pdf-viewer" src="abstract.pdf#toolbar=0&navpanes=0" title="Abstract ISAHP 2024" oncontextmenu="return false;"></iframe>
+          <iframe class="pdf-viewer" src="1. Abstract.pdf#toolbar=0&navpanes=0" title="Abstract ISAHP 2024" oncontextmenu="return false;"></iframe>
         </div>
 
         <!-- 2. Paper Acceptance Notice -->
         <div class="document-wrapper">
           <h3>2. Official Paper Acceptance Notice (ISAHP 2024)</h3>
-          <iframe class="pdf-viewer" src="aprobacion.pdf#toolbar=0&navpanes=0" title="Paper Acceptance Notice" oncontextmenu="return false;"></iframe>
+          <iframe class="pdf-viewer" src="2. Aprobación del trabajo.pdf#toolbar=0&navpanes=0" title="Paper Acceptance Notice" oncontextmenu="return false;"></iframe>
         </div>
 
         <!-- 3. Longer Paper -->
         <div class="document-wrapper">
           <h3>3. Complete Research Paper (Longer Version)</h3>
-          <iframe class="pdf-viewer" src="paper-longer.pdf#toolbar=0&navpanes=0" title="Complete Research Paper" oncontextmenu="return false;"></iframe>
+          <iframe class="pdf-viewer" src="3.Paper Longer.pdf#toolbar=0&navpanes=0" title="Complete Research Paper" oncontextmenu="return false;"></iframe>
         </div>
 
         <!-- 3.2 Short Paper Alternative -->
         <div class="document-wrapper">
           <h3>3.2 Research Paper (Short Version)</h3>
-          <iframe class="pdf-viewer" src="papers-short.pdf#toolbar=0&navpanes=0" title="Short Research Paper" oncontextmenu="return false;"></iframe>
+          <iframe class="pdf-viewer" src="3.Papers Short.pdf#toolbar=0&navpanes=0" title="Short Research Paper" oncontextmenu="return false;"></iframe>
         </div>
 
         <!-- 4. PowerPoint Presentation -->
         <div class="document-wrapper">
           <h3>4. Conference Presentation Slides (PowerPoint)</h3>
-          <iframe class="pdf-viewer" src="presentacion.pdf#toolbar=0&navpanes=0" title="PowerPoint Presentation" oncontextmenu="return false;"></iframe>
+          <iframe class="pdf-viewer" src="4. PresentaciónPPT.pdf#toolbar=0&navpanes=0" title="PowerPoint Presentation" oncontextmenu="return false;"></iframe>
         </div>
 
         <!-- 5. Proposal Arbitration -->
         <div class="document-wrapper">
           <h3>5. International Arbitration Proposal</h3>
-          <iframe class="pdf-viewer" src="propuesta.pdf#toolbar=0&navpanes=0" title="Proposal Arbitration" oncontextmenu="return false;"></iframe>
+          <iframe class="pdf-viewer" src="5. Propuesta arbitraje.pdf#toolbar=0&navpanes=0" title="Proposal Arbitration" oncontextmenu="return false;"></iframe>
         </div>
 
         <!-- 6. Certificate of Participation -->
         <div class="document-wrapper">
           <h3>6. Certificate of Participation (ISAHP 2024)</h3>
-          <iframe class="pdf-viewer" src="certificado.pdf#toolbar=0&navpanes=0" title="Certificate of Participation" oncontextmenu="return false;"></iframe>
-        </div>
-
-        <!-- 7. Short Bio -->
-        <div class="document-wrapper">
-          <h3>7. Short Biography</h3>
-          <iframe class="pdf-viewer" src="bio.pdf#toolbar=0&navpanes=0" title="Short Biography" oncontextmenu="return false;"></iframe>
-        </div>
-
-        <!-- 8. General Info -->
-        <div class="document-wrapper">
-          <h3>8. General Symposium Overview</h3>
-          <iframe class="pdf-viewer" src="isahp.pdf#toolbar=0&navpanes=0" title="General Info" oncontextmenu="return false;"></iframe>
+          <iframe class="pdf-viewer" src="6. Certificado.pdf#toolbar=0&navpanes=0" title="Certificate of Participation" oncontextmenu="return false;"></iframe>
         </div>
 
       </div>
     </section>
 
-    <!-- Multimedia Section -->
+    <!-- Multimedia Section (Updated with single video https://youtu.be/45krXGjnyVg) -->
     <section class="section-block" id="multimedia" style="background: #040811;">
       <div class="container">
         <div class="section-head">
           <h2>Multimedia Resources</h2>
-          <p>Audiovisual recording of the official symposium presentation and methodological discussion.</p>
+          <p>Audiovisual recording of the official symposium presentation.</p>
         </div>
         
         <div class="multimedia-grid">
           
-          <!-- Video 1 -->
           <div class="video-container">
-            <h3>Official Video Presentation</h3>
+            <h3>Official Video Presentation (ISAHP 2024)</h3>
             <div class="iframe-wrapper">
-              <iframe src="https://www.youtube.com/embed/f4NYVoqwvuM" title="Official Presentation" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-          </div>
-
-          <!-- Video 2 -->
-          <div class="video-container">
-            <h3>Methodological Discussion & Walkthrough</h3>
-            <div class="iframe-wrapper">
-              <iframe src="https://www.youtube.com/embed/ncEZc78e4fY" title="Methodological Discussion" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              <iframe src="https://www.youtube.com/embed/45krXGjnyVg" title="Official Video Presentation" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
           </div>
 
