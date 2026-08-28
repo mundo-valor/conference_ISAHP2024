@@ -52,7 +52,7 @@
       padding: 0 1.5rem;
     }
 
-    /* Barra Superior */
+    /* Header */
     header {
       background: rgba(7, 12, 24, 0.98);
       backdrop-filter: blur(12px);
@@ -88,7 +88,6 @@
       box-shadow: 0 4px 15px rgba(0,0,0,0.5);
     }
 
-    /* Logo ampliado en la barra superior */
     .logo-container img {
       height: 72px;
       width: auto;
@@ -206,7 +205,7 @@
       flex-wrap: wrap;
     }
 
-    /* Sección del Autor */
+    /* Author Section */
     .author-section {
       padding: 4.5rem 0;
       background: radial-gradient(circle at 50% 50%, #0f172a 0%, #070c18 85%);
@@ -333,7 +332,7 @@
       text-align: justify;
     }
 
-    /* Secciones de Contenido */
+    /* Content Sections */
     .section-block {
       padding: 4.5rem 0;
       border-bottom: 1px solid var(--border-card);
@@ -360,7 +359,7 @@
       font-size: 1.1rem;
     }
 
-    /* Visores de Documentos */
+    /* PDF Viewers */
     .document-wrapper {
       background: var(--bg-card);
       border: 1px solid var(--border-card);
@@ -387,7 +386,7 @@
       background-color: #e2e8f0; 
     }
 
-    /* Cuadrícula Multimedia */
+    /* Multimedia Section */
     .multimedia-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -413,7 +412,7 @@
 
     .iframe-wrapper {
       position: relative;
-      padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
       height: 0;
       border-radius: 8px;
       overflow: hidden;
@@ -542,7 +541,7 @@
       </div>
     </section>
 
-    <!-- Document Viewers Section -->
+    <!-- Document Viewers Section (Files mapped cleanly without spaces in filenames) -->
     <section class="section-block" id="documents">
       <div class="container">
         <div class="section-head">
@@ -553,43 +552,55 @@
         <!-- 1. Abstract -->
         <div class="document-wrapper">
           <h3>1. Official Abstract</h3>
-          <iframe class="pdf-viewer" src="1. Abstract_4.pdf#toolbar=0&navpanes=0" title="Abstract ISAHP 2024" oncontextmenu="return false;"></iframe>
+          <iframe class="pdf-viewer" src="abstract.pdf#toolbar=0&navpanes=0" title="Abstract ISAHP 2024" oncontextmenu="return false;"></iframe>
         </div>
 
         <!-- 2. Paper Acceptance Notice -->
         <div class="document-wrapper">
           <h3>2. Official Paper Acceptance Notice (ISAHP 2024)</h3>
-          <iframe class="pdf-viewer" src="2. Aprobación del trabajo_4.pdf#toolbar=0&navpanes=0" title="Paper Acceptance Notice" oncontextmenu="return false;"></iframe>
+          <iframe class="pdf-viewer" src="aprobacion.pdf#toolbar=0&navpanes=0" title="Paper Acceptance Notice" oncontextmenu="return false;"></iframe>
         </div>
 
         <!-- 3. Longer Paper -->
         <div class="document-wrapper">
           <h3>3. Complete Research Paper (Longer Version)</h3>
-          <iframe class="pdf-viewer" src="3.Paper Longer.pdf#toolbar=0&navpanes=0" title="Complete Research Paper" oncontextmenu="return false;"></iframe>
+          <iframe class="pdf-viewer" src="paper-longer.pdf#toolbar=0&navpanes=0" title="Complete Research Paper" oncontextmenu="return false;"></iframe>
         </div>
 
         <!-- 3.2 Short Paper Alternative -->
         <div class="document-wrapper">
           <h3>3.2 Research Paper (Short Version)</h3>
-          <iframe class="pdf-viewer" src="3.Papers Short_2.pdf#toolbar=0&navpanes=0" title="Short Research Paper" oncontextmenu="return false;"></iframe>
+          <iframe class="pdf-viewer" src="papers-short.pdf#toolbar=0&navpanes=0" title="Short Research Paper" oncontextmenu="return false;"></iframe>
         </div>
 
         <!-- 4. PowerPoint Presentation -->
         <div class="document-wrapper">
           <h3>4. Conference Presentation Slides (PowerPoint)</h3>
-          <iframe class="pdf-viewer" src="4. PresentaciónPPT_3.pdf#toolbar=0&navpanes=0" title="PowerPoint Presentation" oncontextmenu="return false;"></iframe>
+          <iframe class="pdf-viewer" src="presentacion.pdf#toolbar=0&navpanes=0" title="PowerPoint Presentation" oncontextmenu="return false;"></iframe>
         </div>
 
         <!-- 5. Proposal Arbitration -->
         <div class="document-wrapper">
           <h3>5. International Arbitration Proposal</h3>
-          <iframe class="pdf-viewer" src="5. Propuesta arbitraje_3.pdf#toolbar=0&navpanes=0" title="Proposal Arbitration" oncontextmenu="return false;"></iframe>
+          <iframe class="pdf-viewer" src="propuesta.pdf#toolbar=0&navpanes=0" title="Proposal Arbitration" oncontextmenu="return false;"></iframe>
         </div>
 
         <!-- 6. Certificate of Participation -->
         <div class="document-wrapper">
           <h3>6. Certificate of Participation (ISAHP 2024)</h3>
-          <iframe class="pdf-viewer" src="6. Certificado_3.pdf#toolbar=0&navpanes=0" title="Certificate of Participation" oncontextmenu="return false;"></iframe>
+          <iframe class="pdf-viewer" src="certificado.pdf#toolbar=0&navpanes=0" title="Certificate of Participation" oncontextmenu="return false;"></iframe>
+        </div>
+
+        <!-- 7. Short Bio -->
+        <div class="document-wrapper">
+          <h3>7. Short Biography</h3>
+          <iframe class="pdf-viewer" src="bio.pdf#toolbar=0&navpanes=0" title="Short Biography" oncontextmenu="return false;"></iframe>
+        </div>
+
+        <!-- 8. General Info -->
+        <div class="document-wrapper">
+          <h3>8. General Symposium Overview</h3>
+          <iframe class="pdf-viewer" src="isahp.pdf#toolbar=0&navpanes=0" title="General Info" oncontextmenu="return false;"></iframe>
         </div>
 
       </div>
